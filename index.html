@@ -10,24 +10,27 @@
       background: #0a0a0a;
       color: #e0e0e0;
       text-align: center;
+      overflow-x: hidden;
     }
 
     header {
       padding: 40px;
       background: linear-gradient(90deg, #6d28d9, #9333ea);
     }
+
     header h1 {
       font-size: 2.5em;
       margin: 0;
       color: #fff;
     }
+
     header p {
       font-size: 1.2em;
       margin-top: 10px;
       color: #d8b4fe;
     }
 
-    /* Seção Redes Sociais */
+    /* Redes sociais */
     .redes {
       padding: 20px;
       background: #111;
@@ -36,6 +39,7 @@
       gap: 15px;
       flex-wrap: wrap;
     }
+
     .rede-botao {
       padding: 10px 20px;
       border-radius: 8px;
@@ -45,6 +49,7 @@
       background: #6d28d9;
       transition: 0.3s;
     }
+
     .rede-botao:hover {
       background: #9333ea;
     }
@@ -52,6 +57,7 @@
     section {
       padding: 40px 20px;
     }
+
     .sobre {
       max-width: 900px;
       margin: auto;
@@ -60,23 +66,22 @@
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(147, 51, 234, 0.4);
       text-align: left;
+      line-height: 1.6em;
     }
+
     .sobre h2 {
       color: #c084fc;
       text-align: center;
-    }
-    .sobre p {
-      line-height: 1.6em;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
-    /* Planos */
     .planos {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
     }
+
     .card {
       background: #1a1a1a;
       padding: 25px;
@@ -85,31 +90,39 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.6);
       transition: 0.3s;
     }
+
     .card:hover {
       transform: scale(1.05);
       box-shadow: 0 0 20px rgba(147, 51, 234, 0.7);
     }
+
     .card h3 {
       margin: 10px 0;
     }
+
     .preco {
       font-size: 1.2em;
       margin-top: 10px;
       font-weight: bold;
       color: #c084fc;
     }
+
     .pro {
       border: 3px solid #a855f7;
     }
+
     .pro h3 {
       color: #a855f7;
     }
+
     .delux {
       border: 3px solid #9333ea;
     }
+
     .delux h3 {
       color: #c084fc;
     }
+
     .melhor {
       background: #6d28d9;
       color: white;
@@ -120,6 +133,7 @@
       margin-bottom: 10px;
       display: inline-block;
     }
+
     .botao {
       display: inline-block;
       margin-top: 20px;
@@ -131,48 +145,67 @@
       font-weight: bold;
       transition: 0.3s;
     }
+
     .botao:hover {
       background: #6d28d9;
     }
 
     /* Avaliações */
     .avaliacoes {
-      background: #111;
-      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+      background: #1a1a1a;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(147, 51, 234, 0.4);
+      text-align: center;
     }
+
     .avaliacoes h2 {
       color: #c084fc;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
-    .carrossel {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 15px;
-    }
-    .review {
-      background: #1a1a1a;
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
       border-radius: 12px;
-      min-width: 300px;
-      max-width: 320px;
-      scroll-snap-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 18px;
       transition: 0.3s;
     }
-    .review:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(147, 51, 234, 0.6);
+
+    .carousel-btn:hover {
+      background: rgba(147, 51, 234, 0.8);
     }
-    .review img {
-      width: 100%;
-      border-radius: 12px 12px 0 0;
+
+    .prev {
+      left: 10px;
     }
-    .review p {
-      padding: 15px;
-      font-size: 0.95em;
-      line-height: 1.5em;
-      color: #d4d4d4;
+
+    .next {
+      right: 10px;
     }
 
     footer {
@@ -197,15 +230,15 @@
     <a href="https://discord.gg/rM2k6ZUvPV" target="_blank" class="rede-botao">Discord</a>
   </div>
 
-  <!-- Seção de apresentação -->
+  <!-- Sobre -->
   <section>
     <div class="sobre">
       <h2>👋 Olá, eu sou o Astro!</h2>
-      <p>Criei este servidor e a otimização porque sei como é frustrante jogar com o PC travando...</p>
-      <p>O <b>nosso servidor</b> é mais do que só um espaço para divulgar a otimização...</p>
-      <p>As otimizações foram criadas com muito cuidado e testes...</p>
-      <p>Temos duas versões disponíveis: DELUXE e PRO...</p>
-      <p>Se você está cansado de jogar com travamentos, esse é o lugar certo 🚀</p>
+      <p>Criei este servidor e a otimização porque sei como é frustrante jogar com o PC travando, lagando e sem desempenho. A ideia nasceu depois de ver muitos amigos e pessoas da comunidade sofrendo com jogos rodando mal, mesmo em computadores bons. Eu queria trazer uma solução acessível, prática e realmente eficaz.</p>
+      <p>O nosso servidor é mais do que só um espaço para divulgar a otimização. Ele é um lugar de comunidade, onde você pode trocar ideias, compartilhar resultados, tirar dúvidas e receber suporte direto comigo. Aqui todo mundo aprende junto, ajuda uns aos outros e evolui para aproveitar o máximo do PC.</p>
+      <p>As otimizações foram criadas com muito cuidado e testes, sempre pensando na segurança e desempenho real, sem “milagres” falsos ou programas suspeitos. O objetivo é simples: deixar seu PC mais rápido, estável e pronto para rodar qualquer jogo com mais FPS.</p>
+      <p>Temos duas versões disponíveis: <b>DELUXE</b>, uma versão completa para quem quer um bom desempenho por um preço acessível (R$7), e a <b>PRO</b>, que é a versão mais avançada, trazendo o máximo de performance que conseguimos extrair do seu sistema (R$12).</p>
+      <p>Se você está cansado de jogar com travamentos, esse é o lugar certo. 🚀 Aqui você vai ter uma comunidade ativa, suporte personalizado e otimizações que realmente funcionam. Além disso, estou sempre atualizando o servidor e as otimizações com melhorias, novidades e conteúdos exclusivos para você.</p>
     </div>
   </section>
 
@@ -222,6 +255,7 @@
         <p><b>A PRO é a mais completa e a melhor que temos!</b></p>
         <p class="preco">💰 R$12</p>
       </div>
+
       <div class="card delux">
         <h3>Otimização DELUXE</h3>
         <p>✔ Mais FPS</p>
@@ -234,24 +268,18 @@
   </section>
 
   <!-- Avaliações -->
-  <section class="avaliacoes">
-    <h2>⭐ Avaliações de Quem Testou</h2>
-    <div class="carrossel">
-      <div class="review">
-        <img src="avaliacao1.jpg" alt="Avaliação 1">
-        <p>"A otimização é muito boa, tô pegando 200 fps no Roblox tudo máximo" – Markus</p>
-      </div>
-      <div class="review">
-        <img src="avaliacao2.jpg" alt="Avaliação 2">
-        <p>"Muito top de mais produto muito bom, meu pc ficou mil vezes melhor" – GTA</p>
-      </div>
-      <div class="review">
-        <img src="avaliacao3.jpg" alt="Avaliação 3">
-        <p>"Sai de 20 fps pra 70 fps, recomendo muito mesmo" – Amateu-:-</p>
-      </div>
-      <div class="review">
-        <img src="avaliacao4.jpg" alt="Avaliação 4">
-        <p>"Pc tá máquina agora, finalmente rodando suave!" – Gustavinh7</p>
+  <section>
+    <div class="avaliacoes">
+      <h2>⭐ Avaliações Reais dos Usuários</h2>
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="avaliacao1.jpg" alt="Avaliação 1">
+          <img src="avaliacao2.jpg" alt="Avaliação 2">
+          <img src="avaliacao3.jpg" alt="Avaliação 3">
+          <img src="avaliacao4.jpg" alt="Avaliação 4">
+        </div>
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
       </div>
     </div>
   </section>
@@ -259,5 +287,30 @@
   <footer>
     <p>© 2025 - Otimização PRO & DELUXE | Criado por Astro</p>
   </footer>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector('.prev');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      track.style.transform = 'translateX(' + (-slideWidth * currentIndex) + 'px)';
+    }
+
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    window.addEventListener('resize', updateCarousel);
+  </script>
 </body>
 </html>
